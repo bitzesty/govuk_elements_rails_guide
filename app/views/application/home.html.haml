@@ -1,0 +1,44 @@
+- @page_title = 'GovUK Elements Rails Guide'
+- @app_title = 'GovUK Elements Rails Guide'
+
+%h1.heading-large GOV.UK elements rails snippets
+
+%p GOV.UK elements Rails view helpers can be used to help with prototyping.
+
+%h2.heading-medium Forms
+
+%p
+  Below are form helper examples. The code snippets show calls to form helper
+  methods. Call helpers from inside a block passed to
+  %code.language-ruby< form_for()
+  \. For example:
+
+%pre
+  %code.language-ruby
+    = preserve do
+      :escaped
+        model = ExampleModel.new
+
+         form_for(model) do |f|
+           f.text_field :name
+
+= render partial: 'helper_example',
+      locals: { label: 'Text inputs', code: 'f.text_field :name' }
+
+= #render partial: 'helper_example',
+      locals: { label: 'Text inputs with error', code: 'model.errors.add(:name, "please enter name"); f.text_field :name' }
+
+= render partial: 'helper_example',
+      locals: { label: 'Text field row', code: 'f.text_field_row :name' }
+
+= render partial: 'helper_example',
+      locals: { label: 'Textarea inputs', code: 'f.text_area :name' }
+
+= #render partial: 'helper_example',
+      locals: { label: 'Radio buttons - inline',
+        code: "f.radio_buttons(:status, %i[ accepted declined ], inline: true, labeler: ->(v){ t(v, scope: 'invitations.statuses') })" }
+
+= #render partial: 'helper_example',
+      locals: { label: 'Radio buttons - not inline',
+        code: "f.radio_buttons(:status, %i[ assured_shorthold_tenancy demoted_assured_shorthold_tenancy ], labeler: ->(v){ t(v, scope: 'invitations.statuses') })" }
+

@@ -36,7 +36,7 @@ module GovukElementsRailsGuide
     # known values: information, service
     config.product_type = 'information'
 
-    config.use_govuk_elements_form_builder = true
-
+    # config.use_govuk_elements_form_builder = true
+    config.use_labelling_form_builder = false
   end
 end
