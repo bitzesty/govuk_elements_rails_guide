@@ -13,7 +13,7 @@ gem 'haml-rails'
 
 gem 'govuk_frontend_toolkit'
 gem 'govuk_elements_rails', '~> 1.1.2'
-gem 'govuk_elements_form_builder', git: 'https://github.com/ministryofjustice/govuk_elements_form_builder.git'
+gem 'govuk_elements_form_builder', git: 'https://github.com/ministryofjustice/govuk_elements_form_builder.git', branch: 'hint-text'
 
 gem 'moj_template'
 gem 'pry'
